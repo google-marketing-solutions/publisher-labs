@@ -1,0 +1,13 @@
+chromedriver-binary-auto==0.3.1 # Running pip install will also install and setup the selenium chrome driver on your environment
+fastapi==0.110.0
+googleads==41.0.0
+pydantic==2.6.3
+pydantic-settings==2.2.1
+PyYAML==6.0.1
+requests==2.31.0
+selenium==4.18.1
+selenium-wire==5.1.0
+starlette==0.36.3
+uvicorn==0.27.1
+setuptools==69.2.0
+itsdangerous==2.1.2
