@@ -1,0 +1,42 @@
+{
+  "license": "Apache-2.0",
+  "name": "google-admanager-creative-screenshot-tool",
+  "author": "ghys@google.com",
+  "scripts": {
+    "start": "concurrently --names tsc,esb -c green.bold,blue.bold --kill-others \"yarn:build --dev\" \"tsc --watch\" ",
+    "build-watch": "concurrently --success --names tsc,esb -c green.bold,blue.bold tsc yarn:build",
+    "build": "node ./esbuild.config.mjs",
+    "clean": "gts clean",
+    "lint": "gts lint",
+    "generate-api-client": "yarn openapi --input http://localhost:8080/openapi.json --output ./generated --name ApiClient",
+    "setup": "yarn install && yarn generate-api-client"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "chakra-react-select": "^4.7.6",
+    "framer-motion": "^11.0.5",
+    "lodash.uniqby": "^4.7.0",
+    "openai": "^4.28.4",
+    "openapi-typescript-codegen": "^0.27.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^5.0.1"
+  },
+  "devDependencies": {
+    "@antimatter-labs/eslint-plugin-no-anonymous-use-effect-callback-rule": "^1.0.2",
+    "@types/lodash.uniqby": "^4.7.9",
+    "@types/node": "20.8.2",
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
+    "concurrently": "8.2.2",
+    "create-serve": "1.0.1",
+    "esbuild": "0.20.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gts": "^5.2.0",
+    "openapi-typescript": "^6.7.4",
+    "rimraf": "5.0.5",
+    "typescript": "~5.2.0"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "strict": true,
+    "sourceMap": true,
+    "outDir": "www/build",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "incremental": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "include": ["src", "www"],
+  "exclude": [
+    "node_modules", "www/build"
+  ]
+}

@@ -1,0 +1,11 @@
+.env
+
+.vscode
+
+.DS_Store
+
+generated
+node_modules
+
+www/build
+yarn.lock
