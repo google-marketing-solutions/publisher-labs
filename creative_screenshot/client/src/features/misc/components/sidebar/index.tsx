@@ -33,7 +33,6 @@ import {SidebarProps} from './types';
 
 export const Sidebar: FC<SidebarProps> = props => {
   const {
-    githubLink,
     currentRoute: currentNavigationRoute,
     onRouteTagClick,
     profile,
@@ -77,7 +76,11 @@ export const Sidebar: FC<SidebarProps> = props => {
       </Stack>
       <Stack spacing="4">
         <Divider></Divider>
-        <Link href={githubLink} target="_blank" width={'100$'}>
+        <Link
+          href="https://github.com/google-marketing-solutions/publisher-labs"
+          target="_blank"
+          width={'100%'}
+        >
           <SidebarButton leftIcon={<GitHubIcon />}>
             View on Github
           </SidebarButton>

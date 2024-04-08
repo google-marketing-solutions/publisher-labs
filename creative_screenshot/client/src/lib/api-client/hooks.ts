@@ -21,8 +21,7 @@ import {awaitedTimeout} from './utils';
 import {UseApiCallOptions, UseApiCallReturn} from './types';
 
 // false: Use real API request, true, Use the mockGenerators
-export const DEBUG_IS_MOCK_MODE =
-  process.env['MOCK_MODE'] === 'TRUE' ? true : false;
+export const DEBUG_IS_MOCK_MODE = false;
 // How long to wait for each mock request
 export const MOCK_FAKE_DELAY_TIME = 1000;
 

@@ -19,7 +19,6 @@ import {AuthProfile} from '../../../../lib/api-client';
 import {NavigationRoute} from '../../../../providers/types';
 
 export interface SidebarProps {
-  githubLink: string;
   currentRoute: NavigationRoute;
   onRouteTagClick: (clickedRoute: NavigationRoute) => void;
   profile: AuthProfile;

@@ -50,7 +50,6 @@ export const AppProvider = () => {
   return (
     <Flex height={'100vh'}>
       <Sidebar
-        githubLink="github.com"
         currentRoute={currentRoute}
         onRouteTagClick={setCurrentRoute}
         profile={getProfile.data}

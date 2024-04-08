@@ -19,6 +19,7 @@ import {
   Container,
   Divider,
   Heading,
+  Link,
   Stack,
   Text,
 } from '@chakra-ui/react';
@@ -52,9 +53,15 @@ export const AuthPage = () => {
               Continue with Google
             </Button>
             <Divider my="2" />
-            <Button variant="ghost" leftIcon={<GitHubIcon />}>
-              View on GitHub
-            </Button>
+            <Link
+              href="https://github.com/google-marketing-solutions/publisher-labs"
+              target="_blank"
+              width={'100%'}
+            >
+              <Button variant="ghost" leftIcon={<GitHubIcon />}>
+                View on GitHub
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Stack>
