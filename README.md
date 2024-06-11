@@ -18,17 +18,69 @@ Simularly, if you used this, let us know and give us feedback!
 
 See `contributing.md` for ways to get started.
 
-## 1. Client setup
+
+## 0. Prerequisites
+
+Before running the application, the following steps and tools are needed on the device where both server will be ran:
+
+- [Node](https://nodejs.org/en/download/package-manager)
+    - `node --version`: 16.19.0
+- [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+    - `npm install -g yarn`
+    - `yarn --version`: 1.22.19
+- [Python 3](https://www.python.org/downloads/)
+    - `python --version`: 3.11.4
+- [pip](https://pip.pypa.io/en/stable/installation/)
+    - `pip --version`: 24.0
+- [Google Chrome](https://www.google.com/chrome/browser-tools/)
+    - the selenium headless browser runs on chrome
+- A Google Cloud OAuth2 client (see below)
+- Configured `/server/src/.env` (see below)
+
+####  Google Cloud OAuth2 client
+
+This project uses Google OAuth 2.0 and sends credentials to the Google Ad Manager API, using the web client auth flow.
+
+Therefore, a Google Cloud project and an OAuth 2.0 web client is required.
+
+- [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
+
+After creating a Google OAuth 2.0 Web Client in the Google Cloud console, fill in the environment variables correctly, as described in the `.env.example` file.
+
+####  Environment variables
+
+- Copy the `.env.example` file and rename it to `.env`
+- Fill in each of the constants in that `.env` file accordingly
+- On requests, the server will use the secrets stored in the server's cached `.env` file
+
+## 1. Backend
+
+The `/server/` folder is the backend for the client side application of this project.
+Deploying and using this backend can be done seperatly from the frontend. Out of the box, the backend handles autentification, Ad Manager data fetching, creating and serving the creative on-page screenshots.
+Note that the backend can be used standalone without the frontend.
+
+### Installation
+
+1. Make sure to follow the prerequisites
+2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+3. Run the server with python
+```bash
+python server.py
+```
+
+### Usage
+
+- The servers endpoint: [http://localhost:8080](http://localhost:8080).
+- Check 200 status is returned [/ping/](http://localhost:8080/ping/) and returns `200` and `"pong"`
+- API's documentation: [/docs/](http://localhost:8080/docs/)
+
+
+## 2. Frontend
 
 This react application is the client side application of this project.
-
-### Prerequisites
-
-Before running the application, the following steps and tools are needed on the device where this server will be ran
-
-- node installed
-- yarn / npm installed (or any node package manager)
-- the server running at `http://localhost:8080`
 
 ### Installation
 
@@ -51,58 +103,6 @@ yarn start
 
 - The server should be live at [http://localhost:5000](http://localhost:5000).
 - For the Google login, please use the account tied to your Google Ad Manager network
-
-## 2. Server setup
-
-The server/ folder is the backend for the client side application of this project.
-Deploying and using this backend can be done seperatly from the frontend. Out of the box, the backend handles autentification, Ad Manager data fetching, creating and serving the creative on-page screenshots.
-
-### Prerequisites
-
-Before running the application, the following steps and tools are needed on the device where this server will be ran
-
-- Python 3.10+
-- PIP
-- Chrome Browser
-    - To run Selenium in
-- A Google Cloud OAuth2 client (see below)
-- Corretly setup `.env` file (see below)
-
-####  Google Cloud OAuth2 client
-
-This project uses Google OAuth 2.0 and sends credentials to the Google Ad Manager API, using the web client auth flow.
-
-Therefore, a Google Cloud project and an OAuth 2.0 web client is required.
-
-- [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
-
-After creating a Google OAuth 2.0 Web Client in the Google Cloud console, fill in the environment variables correctly, as described in the `.env.sample` file.
-
-####  Environment variables
-
-- Copy the `.env.sample` file and rename it to `.env`
-- Fill in each of the constants in that `.env` file accordingly
-- On requests, the server will use the secrets stored in the server's cached `.env` file
-
-
-### Installation
-
-1. Make sure to follow the prerequisites
-2. Install dependencies
-```bash
-pip install -r requirement.txt
-```
-3. Run the server with python
-```bash
-python server.py
-```
-
-### Usage
-
-- The servers endpoint: [http://localhost:8080](http://localhost:8080).
-- Check 200 status is returned [/ping/](http://localhost:8080/ping/) and returns `200` and `"pong"`
-- API's documentation: [/docs/](http://localhost:8080/docs/)
-
 
 ## 3. Deploying this as a product
 
@@ -127,5 +127,3 @@ Our recommendation is to create a Docker image containing both servers and all t
 - Chakra UI
 - ES Build (For bundling and packaging)
 - Auto-generated API client from OpenAPI spec
-
-
