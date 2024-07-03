@@ -1,5 +1,5 @@
 
-# Creative Screenshot Tool
+# Publishers Creative Screenshot
 
 ## Ad Manager Automated Creative On-site Screenshots
 
